@@ -71,9 +71,9 @@ class microbitp : public MicroBitComponent
 //    MicroBit uBit;
  //   MicroBitPin pin1 = uBit.io.P2;
 //    microbitp  pin0(7, 3, 15);                                          // Calliope Pins
-    microbitp  pin2(7, MICROBIT_PIN_P0, PIN_CAPABILITY_ALL);              //P1
+    microbitp  pin0(7, MICROBIT_PIN_P0, PIN_CAPABILITY_ALL);              //P1
     microbitp  pin1(8, MICROBIT_PIN_P1, PIN_CAPABILITY_ALL);              //P2
-    microbitp  pin0(9, MICROBIT_PIN_P2, PIN_CAPABILITY_ALL);              //C16
+    microbitp  pin2(9, MICROBIT_PIN_P2, PIN_CAPABILITY_ALL);              //C16
  //   microbitp  pin5(12, MICROBIT_PIN_P5, PIN_CAPABILITY_STANDARD);        //
     microbitp  pin8(15, MICROBIT_PIN_P8, PIN_CAPABILITY_STANDARD);        //C17
  //   microbitp  pin11(18,MICROBIT_PIN_P11,PIN_CAPABILITY_STANDARD);        //
