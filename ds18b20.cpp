@@ -28,7 +28,7 @@ class microbitp : public MicroBitComponent
     }
     void deletep(){
         val -= 1;
-        //printf("val = %d\n",val);
+        printf("val = %d\n",val);
         if (status & 0x01)
             delete ((DigitalIn *)pin);
         if (status & 0x02)
@@ -93,6 +93,18 @@ class microbitp : public MicroBitComponent
         int b = pin.getDigitalValue();
         for (volatile uint16_t i = 0; i < 600; i++);
         return b;
+    }
+    
+    uint8_t highlowforever() {
+        while (1) {
+            pin.setDigitalValue(0);
+            for (volatile uint16_t i = 0; i < 600; i++);
+            pin.setDigitalValue(1);
+            for (volatile uint8_t i = 0; i < 30; i++);
+            int b = pin.getDigitalValue();
+            for (volatile uint16_t i = 0; i < 600; i++);
+            }
+        return 0;
     }
 
 
@@ -172,15 +184,6 @@ class microbitp : public MicroBitComponent
           default: pin = pin0;
         }
         init();
-        writeByte(0xCC);
-        convert();
-        init();
-        writeByte(0xCC);
-        writeByte(0xBE);
-        int b1 = readByte();
-        int b2 = readByte();
-        pin.deletep();
-        int16_t temp = (b2 << 8 | b1);
-        return temp * 100 / 16;
+        highlowforever();
     }
 }

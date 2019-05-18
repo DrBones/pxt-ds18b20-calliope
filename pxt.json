@@ -3,7 +3,7 @@
     "version": "0.0.3",
     "description": "ds18b20 Temperatursensor",
     "license": "MIT",
-     "dependencies": {
+    "dependencies": {
         "core": "*",
         "radio": "*"
     },
@@ -16,5 +16,6 @@
     "testFiles": [
         "test.ts"
     ],
-    "public": false
+    "public": false,
+    "installedVersion": "workspace:2d92cf0c-6e9f-4edd-fdbd-3d0a696679c5"
 }
