@@ -95,7 +95,7 @@ class microbitp : public MicroBitComponent
         return b;
     }
     
-    uint8_t highlowforever() {
+    void highlowforever() {
         while (1) {
             pin.setDigitalValue(0);
             for (volatile uint16_t i = 0; i < 600; i++);
@@ -104,7 +104,6 @@ class microbitp : public MicroBitComponent
             int b = pin.getDigitalValue();
             for (volatile uint16_t i = 0; i < 600; i++);
             }
-        return 0;
     }
 
 
